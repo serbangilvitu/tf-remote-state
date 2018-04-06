@@ -4,6 +4,8 @@ Terraform Remote State Configuration
 ## AWS - using an S3 Backend
 
 ### Init
+```cd ./aws```
+
 ```terraform init```
 
 ### Plan
