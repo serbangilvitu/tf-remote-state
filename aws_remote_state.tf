@@ -6,6 +6,10 @@ variable "aws_region" {
   type = "string"
 }
 
+variable "s3_bucket_tags" {
+  type = "map"
+}
+
 provider "aws" {
   region     = "${var.aws_region}"
 }
@@ -14,9 +18,5 @@ provider "aws" {
 resource "aws_s3_bucket" "b" {
   bucket = "${var.s3_bucket}"
   acl    = "private"
-
-  tags {
-    Name        = "Terraform Remote State"
-    Environment = "Dev"
-  }
+  tags = "${var.s3_bucket_tags}"
 }
