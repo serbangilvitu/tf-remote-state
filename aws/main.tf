@@ -1,15 +1,3 @@
-variable "s3_bucket" {
-  type = "string"
-}
-
-variable "aws_region" {
-  type = "string"
-}
-
-variable "s3_bucket_tags" {
-  type = "map"
-}
-
 provider "aws" {
   region     = "${var.aws_region}"
 }
@@ -26,8 +14,4 @@ resource "aws_s3_bucket" "tf_state" {
   lifecycle {
     prevent_destroy = true
   }
-}
-
-output "s3_backend_id" {
-  value = "${aws_s3_bucket.tf_state.bucket}"
 }
