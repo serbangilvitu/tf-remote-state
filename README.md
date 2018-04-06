@@ -9,8 +9,10 @@ Terraform Remote State Configuration
 ### Plan
 ```terraform plan -var s3_bucket=<bucket-name> -var aws_region=<aws-region> -var s3_bucket_tags='{Name="Terraform Remote State", Environment="Dev"}' -out=tfplan -input=false```
 
-### Apply
-For example: s3_bucket=tf-test-20180406 aws_region=eu-west-1
+For example: _s3_bucket=tf-test-20180406_ and  _aws_region=eu-west-1_
+
 The list of tags can be customized as required.
+
+### Apply
 
 ```terraform apply "tfplan"```
